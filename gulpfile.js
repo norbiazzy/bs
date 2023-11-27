@@ -71,11 +71,11 @@ function buildcopy() {
         'app/images/dest/**/*',
         'app/**/*.html',
     ], {base: 'app'}) // Параметр "base" сохраняет структуру проекта при копировании
-        .pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+        .pipe(dest('docs')) // Выгружаем в папку с финальной сборкой
 }
 
-function cleandist() {
-    return src('dist', {allowEmpty: true}).pipe(clean())
+function cleandocs() {
+    return src('docs', {allowEmpty: true}).pipe(clean())
 }
 
 function startwatch() {
@@ -91,8 +91,8 @@ exports.styles = styles;
 exports.images = images;
 exports.cleanimg = cleanimg;
 exports.buildcopy = buildcopy;
-exports.cleandist = cleandist;
+exports.cleandocs = cleandocs;
 
-exports.build = series(cleandist, cleanimg, styles, scripts, images, buildcopy);
-// exports.default = series(cleandist, cleanimg, styles, scripts, images, browsersync, startwatch);
+exports.build = series(cleandocs, cleanimg, styles, scripts, images, buildcopy);
+// exports.default = series(cleandocs, cleanimg, styles, scripts, images, browsersync, startwatch);
 exports.default = parallel(styles, scripts, startwatch, browsersync);
