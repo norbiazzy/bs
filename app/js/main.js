@@ -26,14 +26,10 @@ function calc() {
 
 
 let a = document.querySelectorAll('.img__wrap')
-console.log(a)
 for (let i = 0; i < 8; i++) {
-    console.log(i, a[i])
     a[i].style.backgroundImage = `url("images/dest/a${i + 1}.jpg")`
     a[i].style.backgroundPosition = `center`
     a[i].style.backgroundRepeat = `no-repeat`
     a[i].style.backgroundSize = `cover`
 
-
-    console.log(a[i].firstChild)
 }

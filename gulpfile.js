@@ -94,5 +94,4 @@ exports.buildcopy = buildcopy;
 exports.cleandocs = cleandocs;
 
 exports.build = series(cleandocs, cleanimg, styles, scripts, images, buildcopy);
-// exports.default = series(cleandocs, cleanimg, styles, scripts, images, browsersync, startwatch);
 exports.default = parallel(styles, scripts, startwatch, browsersync);
