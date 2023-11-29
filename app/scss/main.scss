@@ -90,7 +90,7 @@ body {
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: rgb(0 0 0 / 95%);
+      background-color: rgba(0 0 0 / 90%);
     }
   }
 
@@ -164,9 +164,11 @@ body {
   &__item {
     padding-bottom: 25px;
   }
+
   &__ceil {
     font-size: 18px;
     text-align: center;
+
     &_min {
       text-decoration-line: line-through;
       color: #bdbdbd;
@@ -273,13 +275,56 @@ body {
   color: #fff;
 }
 
-.modal_tel_title {
-  text-align: center;
+.modal-call {
+  p {
+    margin-bottom: 0;
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  &__form {
+
+  }
 }
 
-.modal_tel_subtitle {
-  text-align: center;
-  font-size: 14px;
+.no-valid {
+  input {
+
+    box-shadow: 0 0 0 0.25rem rgb(255, 0, 0, 0.8);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    outline: 0;
+  }
+
+  &__message {
+    display: none;
+  }
+
+  .no-valid__message {
+    display: block;
+    color: red;
+  }
+}
+
+.spinner-loading {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  &__wrapper {
+    position: absolute;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .img__wrap {
@@ -288,25 +333,22 @@ body {
   object-fit: contain;
   overflow: hidden;
   border: 10px solid white;
-  //backgroundPosition: center
-  //backgroundRepeat: no-repeat
-  //backgroundSize: cover
-  //background-image: url('../images/dest/a1.jpg')
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: rgba(0 0 0 / 0);
+    background-position: center;
+    background-size: 100% auto;
+    //.img__wrap img
+    //position: absolute
+    //top: 0
+    //object-fit: c
+  }
 }
 
-.img__wrap::before {
-  content: '';
-  display: block;
-  width: 100%;
-  padding-bottom: 100%;
-  background-color: rgba(0 0 0 / 0);
-  background-position: center;
-  background-size: 100% auto;
-  //.img__wrap img
-  //position: absolute
-  //top: 0
-  //object-fit: c
-}
 
 .drive {
   &__list {

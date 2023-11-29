@@ -43,6 +43,8 @@ function styles() {
 async function images() {
     src(['app/images/src/**/*.mp4'])
         .pipe(dest('app/images/dest/')) // Выгружаем в папку с финальной сборкой
+    src(['app/images/src/**/*.ico'])
+        .pipe(dest('app/images/dest/')) // Выгружаем в папку с финальной сборкой
     imagecomp(
         "app/images/src/**/*", // Берём все изображения из папки источника
         "app/images/dest/", // Выгружаем оптимизированные изображения в папку назначения
