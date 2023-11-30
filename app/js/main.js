@@ -29,20 +29,20 @@ function calc() {
 }
 
 
-let a = document.querySelectorAll('.img__wrap')
+document.querySelectorAll('.img__wrap').forEach((el,i)=>{
+    el.style.backgroundImage = `url("images/dest/a${i + 1}.jpg")`
+    el.style.backgroundPosition = `center`
+    el.style.backgroundRepeat = `no-repeat`
+    el.style.backgroundSize = `cover`
+})
 
-for (let i = 0; i < 8; i++) {
-    a[i].style.backgroundImage = `url("images/dest/a${i + 1}.jpg")`
-    a[i].style.backgroundPosition = `center`
-    a[i].style.backgroundRepeat = `no-repeat`
-    a[i].style.backgroundSize = `cover`
-
-}
 
 let btnSendToTelegram = document.querySelector('#sendToTelegram')
 let modalInpTel = document.querySelector('#modalInpTel')
 let modalTelWrap = document.querySelector('.form_tel-wrapper')
 let spinner = document.querySelector('.spinner-loading__wrapper')
+let modal = document.querySelector('.modal-call')
+let btnCloseModal = document.querySelector('.btn-close-modal')
 
 modalInpTel.addEventListener('blur', () => {
     if (validTel(modalInpTel.value)) modalTelWrap.classList.remove('no-valid')
@@ -59,6 +59,7 @@ btnSendToTelegram.addEventListener('click', (async evt => {
             .then(response => response.json())
             .then(data => console.log(data))
         spinner.classList.add('d-none')
+        btnCloseModal.click()
     } else {
         console.log(modalInpTel.value)
     }
