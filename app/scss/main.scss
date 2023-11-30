@@ -81,6 +81,7 @@ body {
     height: 100vh;
     overflow: hidden;
     justify-content: center;
+    background-color: black;
 
     &::after {
       content: '';
@@ -315,6 +316,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+
   &__wrapper {
     position: absolute;
     display: flex;
