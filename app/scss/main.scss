@@ -22,15 +22,6 @@ body {
   z-index: 1000;
 }
 
-.modal-header {
-  padding: 0;
-
-  img {
-    border-radius: 0.3rem;
-    max-height: 300px;
-    object-fit: cover;
-  }
-}
 
 .header {
   display: flex;
@@ -91,7 +82,7 @@ body {
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: rgba(0 0 0 / 90%);
+      background-color: rgba(0 0 0 / 75%);
     }
   }
 
@@ -109,14 +100,16 @@ body {
 
   &__title {
     font-size: 42px;
+    text-shadow: #000 1px 0 10px;
   }
 
-  &__subtitle {
-    font-size: 32px;
+  &__list {
+
   }
 
-  &__text {
+  &__item {
     font-size: 22px;
+    text-shadow: #000 1px 0 10px;
   }
 }
 
@@ -282,21 +275,45 @@ body {
   color: #fff;
 }
 
-.modal-call {
-  p {
-    margin-bottom: 0;
+.modal {
+  &-header {
+    padding: 0;
+
+    img {
+      border-radius: 0.3rem;
+      max-height: 300px;
+      object-fit: cover;
+    }
   }
 
-  &__title {
+  &-body {
+    display: flex;
+    height: 230px;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  &__subtitle {
-    font-size: 14px;
-    margin-bottom: 5px;
+  &-btn_wrap {
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__form {
+  &-call {
+    p {
+      margin-bottom: 0;
+    }
 
+    &__title {
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    &__form {
+
+    }
   }
 }
 
@@ -306,15 +323,6 @@ body {
     box-shadow: 0 0 0 0.25rem rgb(255, 0, 0, 0.8);
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     outline: 0;
-  }
-
-  &__message {
-    display: none;
-  }
-
-  .no-valid__message {
-    display: block;
-    color: red;
   }
 }
 
@@ -507,6 +515,8 @@ body {
 @media (min-width: 992px) {
   .prev__title {
     font-size: 62px;
+    max-width: 70%;
+    margin: 0 auto;
   }
   .prev__subtitle {
     font-size: 52px;
@@ -516,8 +526,33 @@ body {
   }
 }
 
-
+.btn__main_mobile {
+  display: none;}
 @media (max-width: 576px) {
+  .btn__main {
+    &_sm {
+      height: 40px;
+      font-size: 16px;
+      padding-left: 40px;
+      padding-right: 40px;
+
+    }
+
+    &_mobile {
+      display: block;
+      position: sticky;
+      top: 85%;
+      margin-bottom: -70px;
+      height: 78px;
+      font-size: 20px;
+      padding-left: 35px;
+      padding-right: 35px;
+      z-index: 300;
+      p {
+        margin: 0;
+      }
+    }
+  }
   .mainTitle {
     font-size: 20px;
     padding: 20px 10px;
@@ -559,4 +594,11 @@ body {
 .yandex-map {
   width: 100%;
   height: 450px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 115;
 }

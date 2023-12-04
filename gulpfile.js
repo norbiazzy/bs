@@ -20,7 +20,8 @@ function browsersync() {
 };
 
 function scripts() {
-    return src(['app/js/bootstrap.js',
+    return src(['app/js/popper.min.js',
+        'app/js/bootstrap.js',
         'app/js/main.js'])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
